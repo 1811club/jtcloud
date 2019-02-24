@@ -8,7 +8,7 @@ import model.PageBean;
 
 public interface CourseDao {
 	/*
-	 * 添加课程
+	 * 添加课程fdsafadsf
 	 */
 	int addCos(Course course, String courseDate);
 	/*
