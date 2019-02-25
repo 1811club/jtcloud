@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Implementation-Title: 1810-student-course
+Implementation-Title: 1810-student-document
 Implementation-Version: 0.0.1-SNAPSHOT
 Built-By: tarena
 Implementation-Vendor-Id: com.jt

@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>1810-student-course</artifactId>
+  <artifactId>1810-student-score</artifactId>
   <packaging>jar</packaging>
 
-  <name>1810-student-course</name>
+  <name>1810-student-score</name>
   <url>http://maven.apache.org</url>
 
   <properties>
@@ -21,7 +21,7 @@
     </dependency>
     <dependency>
     	<groupId>com.jt</groupId>
-    	<artifactId>1810-common</artifactId>
+    	<artifactId>1810-student-common</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
