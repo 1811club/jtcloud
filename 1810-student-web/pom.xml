@@ -12,6 +12,16 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+      <dependency>
+         <groupId>com.jt</groupId>
+         <artifactId>1810-feign-client</artifactId>
+       <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+      	<groupId>com.jt</groupId>
+      	<artifactId>1810-student-common</artifactId>
+      	<version>0.0.1-SNAPSHOT</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>1810-student-web</finalName>
