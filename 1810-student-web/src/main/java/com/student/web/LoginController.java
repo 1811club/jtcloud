@@ -119,7 +119,7 @@ public class LoginController {
 	
 	@RequestMapping("ServletselectPwd")
 	public String logout(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException{
-		//锟斤拷锟絪ession锟叫碉拷锟斤拷锟斤拷
+		//锟斤拷锟絪ession锟叫碉拷锟斤拷锟斤拷adf
 		String userNum=(String) request.getSession().getAttribute("usernum");
 		User rs= ssoService.checkUsername(userNum);
 		String pwd=rs.getPassword();
