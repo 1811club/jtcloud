@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teacher.mapper.UserMapper">
+	<insert id="insert" parameterType="com.jt.pojo.Teacher" >
+	
+insert into user(user_num,user_name,password,phone,role_id) values(#{teaNum},#{teaName},#{password},#{phone},#{roleId})
+	</insert>
+	<delete id="delete" parameterType="com.jt.pojo.Teacher">
+	delete from user where user_num=#{teaNum};
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
