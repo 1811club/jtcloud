@@ -13,6 +13,19 @@
   </properties>
 
   <dependencies>
+  
+  <!--通用mapper,tk.mapper-->
+		        <dependency>
+		            <groupId>tk.mybatis</groupId>
+		            <artifactId>mapper-spring-boot-starter</artifactId>
+		            <version>1.1.4</version>
+		        </dependency>
+		        <!-- 通用Mapper -->
+				<dependency>
+					<groupId>com.github.abel533</groupId>
+					<artifactId>mapper</artifactId>
+	<version>2.3.2</version>
+</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>

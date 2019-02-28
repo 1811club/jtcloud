@@ -37,4 +37,5 @@ public interface SsoService {
 	public User checkUsername(@RequestParam(value="userNum") String userNum);
 	
 	
+	
 }

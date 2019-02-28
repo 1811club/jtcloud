@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.teacher.mapper.TeacherMapper">
+	<insert id="insert" parameterType="com.jt.pojo.Teacher" >
+	insert into teacher(tea_num,tea_name,tea_sex,tea_age,tea_course,major,department) values(
+	#{teaNum},#{teaName},#{teaSex},#{teaAge},#{teaCourse},#{major},#{department})
+	</insert>
+	
+	<delete id="delete" parameterType="com.jt.pojo.Teacher">
+	delete from teacher where tea_num=#{teaNum}
+	</delete>
+	<select id="selectTeachers" resultType="com.jt.pojo.Teacher">
+	select * from teacher
+	</select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
