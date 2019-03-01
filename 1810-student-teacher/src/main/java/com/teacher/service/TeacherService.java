@@ -24,6 +24,7 @@ public class TeacherService {
 //	
 //	}
 
+	//执行teacher添加操作
 public int addteacher(Teacher teacher) {
 		teacher.setRoleId(1);
 		int tm = 0,um=0;
@@ -45,8 +46,18 @@ public int addteacher(Teacher teacher) {
 	return 0;
 	}
 
+//执行查询操作
 public List<Teacher> selectTeacher() {
 	
 	return teacherMapper.selectTeachers();
 }
+
+//执行删除操作
+public int deleteTeacher(String teanum) {
+	
+	return teacherMapper.deleteTeacher(teanum);
+	
+}
+
+
 }

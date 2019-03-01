@@ -18,6 +18,7 @@ import com.teacher.service.TeacherService;
 public class TeacherController {
 
 	
+	//添加老师操作
     @Autowired
     private TeacherService teacherService;
 	@RequestMapping(value="addTeacherInfo",method=RequestMethod.POST )
@@ -29,13 +30,23 @@ public class TeacherController {
 		System.out.println(i);
 		return i;
 	}
-	
+	//查询老师信息操作
 	@RequestMapping(value = "selectTeacher",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Teacher> selectTeacher(){
 		List<Teacher> list = teacherService.selectTeacher();
 		return list;
 	}
+	
+	//删除老师操作
+	@RequestMapping(value = "deleteTeacher",method=RequestMethod.GET)
+	@ResponseBody
+	public int deleteTeacher(String teanum){
+		int result=teacherService.deleteTeacher(teanum);
+		return result;
+	}
+	
+
 	
 //	@RequestMapping("addTeacherInfo")
 //	@ResponseBody

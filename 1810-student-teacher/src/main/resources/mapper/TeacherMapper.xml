@@ -10,9 +10,18 @@
 	<delete id="delete" parameterType="com.jt.pojo.Teacher">
 	delete from teacher where tea_num=#{teaNum}
 	</delete>
+	
+	
 	<select id="selectTeachers" resultType="com.jt.pojo.Teacher">
 	select * from teacher
 	</select>
+	
+	
+	<delete id="deleteTeacher">
+	delete from teacher where tea_num=#{teanum}
+	</delete>
+	
+	
 	
 	
 </mapper>

@@ -66,8 +66,8 @@ function page(s){
   <div class="div_select">
   	<form action="ServletSearchScore" method="post">
   	课程名：<input type="text"   name="cosName"/>&nbsp;&nbsp;
-  	学&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text"   name="stuNum"/>&nbsp;&nbsp;
-  	姓&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text"   name="stuName"/><br/><br/>
+  	学&nbsp;&nbsp;&nbsp;&nbsp;号：<input type="text"   name="stuNum"/><br/>
+  	姓&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text"   name="stuName"/><br/>
   	班&nbsp;&nbsp;&nbsp;&nbsp;级：<input type="text"   name="stuClass"/>&nbsp;&nbsp;
   	专&nbsp;&nbsp;&nbsp;&nbsp;业：<input type="text"   name="major"/> &nbsp;&nbsp;
   	<input type="submit" value="查询" />

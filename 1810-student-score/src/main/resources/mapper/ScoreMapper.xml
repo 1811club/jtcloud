@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.student.score.mapper.ScoreMapper">
+
+	<select id="selectAllScore" resultType="com.jt.common.vo.Score">
+		select * from score limit
+		#{page} , #{pageCount}
+	</select>
+
+	<select id="selectCou" resultType="java.lang.Integer">
+		select count(*) from score
+	</select>
+
+	<select id="selectCouByName" resultType="java.lang.Integer">
+		select count(*) from
+		(select stu_num from score group by score.stu_num ) as a
+	</select>
+
+	<delete id="deleteS" parameterType="com.jt.common.vo.Score">
+		delete from score where
+		score_id = #{scoreId}
+	</delete>
+
+	<select id="selectOneSc" resultType="com.jt.common.vo.Score">
+		select * from score where
+		score_id = #{scid}
+	</select>
+
+	<update id="update" parameterType="com.jt.common.vo.Score">
+		update score set
+		stu_num=#{stuNum},
+		stu_name=#{stuName},
+		stu_class=#{stuClass},
+		course_name=#{courseName},
+		score_grade=#{scoreGrade},
+		major=#{major}
+		where score_id=#{scoreID}
+	</update>
+
+<!-- 	<select id="searchSco" resultType="com.jt.common.vo.Score">
+		select * from score where
+		stu_num like '%#{stuNum}%' and
+		stu_name like '%#{stuName}%' and
+		course_name like '%#{courseName}%' and
+		stu_class like '%#{stuClass}%' and
+		major like '%#{major}%'
+
+	</select> -->
+
+	<select id="searchSco"  parameterType="com.jt.common.vo.Score" resultType="com.jt.common.vo.Score">
+		SELECT * from score WHERE 
+		<if test="stuNum!=null">
+			stu_num like '%${stuNum}%' and
+		</if>
+		<if test="stuName!=null">
+			stu_name like '%${stuName}%' and
+		</if>
+		<if test="courseName!=null">
+			course_name like '%${courseName}%' and
+		</if>
+		<if test="stuClass!=null">
+			stu_class like '%${stuClass}%' and
+		</if>
+		<if test="major!=null">
+			major like '%${major}%'
+		</if>
+		
+	</select>
+	
+	<select id="searchCount" resultType="java.lang.Integer" 
+	       parameterType="com.jt.common.vo.Score">
+		select count(*) from score where
+		<if test="stuNum!=null">
+			stu_num like '%${stuNum}%' and
+		</if>
+		<if test="stuName!=null">
+			stu_name like '%${stuName}%' and
+		</if>
+		<if test="courseName!=null">
+			course_name like '%${courseName}%' and
+		</if>
+		<if test="stuClass!=null">
+			stu_class like '%${stuClass}%' and
+		</if>
+		<if test="major!=null">
+			major like '%${major}%'
+		</if>
+		
+	</select>
+
+<!-- 
+	<select id="searchCount" resultType="java.lang.Integer">
+		select count(*) from score
+		where
+		stu_num like '%#{stuNum}%' and
+		stu_name like '%#{stuName}%' and
+		stu_class like '%#{stuClass}%' and
+		course_name like '%#{courseName}%' and
+		major like '%#{major}%'
+	</select>
+ -->
+	
+	
+	<select id="selSum" resultType="com.jt.common.vo.ScoreSum">
+		select
+		score.stu_num,score.stu_name,score.stu_class,score.major,
+		sum(score.score_grade)
+		as sumScore,avg(score.score_grade) as avg from score group by
+		score.stu_num order by sumScore DESC
+	</select>
+	
+	<insert id="insertOne" parameterType="com.jt.common.vo.Score">
+		insert into score(stu_num,stu_name,stu_class,course_name,score_grade,major) values(
+				#{stuNum},
+				#{stuName},
+				#{stuClass},
+				#{courseName},
+				#{scoreGrade}, 
+				#{major}
+				)
+	</insert>
+	
+	<select id="selectOneByCos" resultType="com.jt.common.vo.Score">
+		select * from score where
+		
+		<if test="courseN!=null">
+			course_name = #{courseN} and
+		</if>
+		<if test="stuN!=null">
+			stu_name = #{stuN}
+		</if>
+	</select>
+	
+	
+
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+
+
