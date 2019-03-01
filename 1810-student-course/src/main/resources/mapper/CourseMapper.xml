@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.student.course.mapper.CourseMapper">
+		
+	<select id="courseFindAll" resultType="com.jt.pojo.Course">
+		select * from course limit #{pageNoInt},#{pageCountInt}
+	</select>
+	<select id="queryCount" resultType="int">
+		select count(*) from course
+	</select>
+	<update id="editCos"  parameterType="com.jt.pojo.Course">
+	update course set course_name=#{courseName},course_credit=#{courseCredit},course_hours=#{courseHours},course_teacher=#{courseTeacher},coursedate=#{courseDate} 
+	where course_id=#{courseID}
+	</update>
+	<select id="findOne" resultType="com.jt.pojo.Course" parameterType="int">
+		select * from course where course_id=#{courseID}
+	</select>
+	<delete id="deleteCos" parameterType="int">
+		delete from course where course_id=#{courseID};
+	</delete>
+	<select id="selectOneCos" resultType="com.jt.pojo.Course" parameterType="com.jt.pojo.Course">
+		select * from course where course_name=#{courseName} and course_teacher=#{courseTeacher}
+	</select>
+	<insert id="addCos" parameterType="com.jt.pojo.Course">
+		insert into course(course_name,course_credit,course_hours,course_teacher,coursedate) values(#{courseName},#{courseCredit},#{courseHours},#{courseTeacher},#{courseDate}
+	</insert>
+</mapper>  
