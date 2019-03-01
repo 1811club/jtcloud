@@ -23,11 +23,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
   <body>
     <!--  遍历map集合 -->
-    <c:forEach var="map" items="${fileNameMap }">
+    <c:forEach var="doc" items="${map }">
     	<c:url value="ServletDownloadFile" var="downurl">
-    		<c:param name="fileName" value="${map.key }"></c:param>
+    		<c:param name="url" value="${doc.value }"></c:param>
     	</c:url>
-    	${map.value }<a href="${downurl }">下载</a>
+    	${doc.key }<a href="${downurl}">下载</a>
     	<br/>
     </c:forEach>
   </body>

@@ -38,6 +38,22 @@
      <artifactId>1810-student-sso</artifactId>
     <version>0.0.1-SNAPSHOT</version>
       </dependency>
+      
+      <dependency>
+      <groupId>io.github.openfeign.form</groupId>
+      <artifactId>feign-form</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.openfeign.form</groupId>
+      <artifactId>feign-form-spring</artifactId>
+      <version>3.3.0</version>
+    </dependency>
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.3.3</version>
+    </dependency>
   </dependencies>
   <dependencyManagement>
 		<dependencies>
