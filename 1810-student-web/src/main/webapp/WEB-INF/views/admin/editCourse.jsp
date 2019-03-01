@@ -92,7 +92,7 @@ function checked(th){
 				</tr>
 				<tr>
 					<td>任课教师：</td>
-					<td><input type="text" name="courseTea" class="put" value="${list.getCourseTeacher() }" /></td>
+					<td><input type="text" name="courseTeacher" class="put" value="${list.getCourseTeacher() }" /></td>
 				</tr>
 				<tr>
 					<td>开课时间：</td>

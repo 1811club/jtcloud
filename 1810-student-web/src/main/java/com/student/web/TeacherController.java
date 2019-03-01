@@ -1,16 +1,19 @@
 package com.student.web;
 
+import java.io.IOException;
 import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.jt.pojo.Teacher;
-import com.jt.pojo.User;
 import com.student.service.TeacherService;
 
 
@@ -45,7 +48,7 @@ public class TeacherController {
 		}
 	}
 	@RequestMapping("ServletFindAllTea")
-	public String selectTeacher(Model model) {
+	public String selectTeacher(Model model) throws ServletException, IOException {
 		
 		List<Teacher> list=teacherService.selectTeacher();
 		model.addAttribute("list",list);
